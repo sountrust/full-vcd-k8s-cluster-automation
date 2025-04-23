@@ -1,10 +1,10 @@
-# ¿¿ VCloudDirector ¿ Complete Infrastructure as Code (IaC) Stack
+# VCloudDirector Complete Infrastructure as Code (IaC) Stack
 
 This repository offers a comprehensive and modular Infrastructure as Code (IaC) solution for provisioning, bootstrapping, configuring, and operating Kubernetes clusters tailored for a multi-environment marketplace platform. It is designed to be reproducible, environment-driven (dev/pre-prod/prod), and maintainable via GitOps workflows.
 
 ---
 
-## ¿ Submodules Overview
+## Submodules Overview
 
 This monorepo is composed of several Git submodules that separate concerns and support reusability and templating flexibility:
 
@@ -20,7 +20,7 @@ This monorepo is composed of several Git submodules that separate concerns and s
 
 ---
 
-## ¿ Architecture Highlights
+## Architecture Highlights
 
 - **Cloud Provider**: vCloud Director (vCD)
 - **Cluster Provisioning**: Terraform + Ansible
@@ -31,29 +31,29 @@ This monorepo is composed of several Git submodules that separate concerns and s
 
 ---
 
-## ¿ Folder Structure
+## Folder Structure
 
 ```bash
 monacocloud/
-¿¿¿ devops/
-¿   ¿¿¿ terraform/              # Main Terraform execution
-¿   ¿¿¿ terraform/modules/      # Git submodule with reusable TF logic
-¿   ¿¿¿ ansible/                # Git submodule for post-TF configuration
-¿   ¿¿¿ k8s/                    # Git submodule for GitOps and platform services
-¿       ¿¿¿ kube-deploy/        # Sub-submodule used by appManager for auto-deployment
-¿¿¿ templating/                 # Git submodule for provisioning base reusable VMs
-¿   ¿¿¿ terraform/
-¿   ¿   ¿¿¿ template/           # Root module that wires everything together
-¿   ¿   ¿¿¿ modules/            # Local TF modules
-¿   ¿   ¿¿¿ cataloging/         # Git submodule to push base Ubuntu templates to catalog
-¿   ¿   ¿¿¿ networking/         # Git submodule for NSXT edge NAT + firewall rules
-¿   ¿¿¿ ansible/                # Plays used after Terraform to prepare VMs for templating
-¿¿¿ *.xlsx                      # Architecture diagrams, cost estimates, etc.
+devops/
+   terraform/              # Main Terraform execution
+   terraform/modules/      # Git submodule with reusable TF logic
+   ansible/                # Git submodule for post-TF configuration
+   k8s/                    # Git submodule for GitOps and platform services
+       kube-deploy/        # Sub-submodule used by appManager for auto-deployment
+templating/                 # Git submodule for provisioning base reusable VMs
+   terraform/
+      template/           # Root module that wires everything together
+      modules/            # Local TF modules
+      cataloging/         # Git submodule to push base Ubuntu templates to catalog
+      networking/         # Git submodule for NSXT edge NAT + firewall rules
+   ansible/                # Plays used after Terraform to prepare VMs for templating
+*.xlsx                      # Architecture diagrams, cost estimates, etc.
 ```
 
 ---
 
-## ¿ GitOps Flow
+## GitOps Flow
 
 1. **Templating (Optional but Recommended)**:
    - Run `templating/terraform/template/` to build reusable VM templates
@@ -76,7 +76,7 @@ monacocloud/
 
 ---
 
-## ¿ Environment Strategy
+## Environment Strategy
 
 - **Branch-Aware Deployments**:
   - `dev`, `pre-prod`, and `prod` are mapped to cluster configurations
@@ -88,7 +88,7 @@ monacocloud/
 
 ---
 
-## ¿ CI/CD & Automation
+## CI/CD & Automation
 
 - **Jenkins**: For internal testing, packaging, and optional scheduled Terraform plans
 - **GitLab**: Infrastructure and sensitive resources are managed here
@@ -96,7 +96,7 @@ monacocloud/
 
 ---
 
-## ¿¿ Getting Started
+## Getting Started
 
 1. Clone with submodules:
    ```bash
@@ -122,7 +122,7 @@ monacocloud/
 
 ---
 
-## ¿ Documentation
+## Documentation
 
 Each submodule contains its own `README.md`:
 
@@ -136,7 +136,7 @@ Each submodule contains its own `README.md`:
 
 ---
 
-## ¿ Cleanup
+## Cleanup
 
 To destroy all infrastructure:
 ```bash
@@ -151,6 +151,6 @@ flux uninstall
 
 ---
 
-## ¿ Contact
+## Contact
 
 Maintained by [Sountrust DevOps Team](mailto:paul@sountrust.com)
