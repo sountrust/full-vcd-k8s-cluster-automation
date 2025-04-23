@@ -1,0 +1,12 @@
+[submodule "vcd-templating"]
+	path = vcd-templating
+	url = git@github.com:sountrust/vcd-templating.git
+[submodule "devops/k8s-gitops-setup"]
+	path = devops/k8s-gitops-setup
+	url = git@github.com:sountrust/k8s-gitops-setup.git
+[submodule "devops/ansible-k8s-ready"]
+	path = devops/ansible-k8s-ready
+	url = git@github.com:sountrust/ansible-k8s-ready.git
+[submodule "devops/terraform/modules"]
+	path = devops/terraform/modules
+	url = git@github.com:sountrust/terraform-vcd-k8s-modules.git
